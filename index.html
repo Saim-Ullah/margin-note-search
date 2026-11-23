@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#193f36">
+  <title>Margin — private note search</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="search.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#q" class="skip">Skip to search</a>
+  <header class="mast"><div class="mastinner">
+    <div class="brand"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="2" width="26" height="24" rx="4" fill="#254c40"/><path d="M7 8h3v12H7zm6 0h2v12h-2zm5 1 2-.5 3 11-2 .5z" fill="#f9eed2"/></svg>Margin<span>/</span><span class="brand-sub">Note search</span></div>
+    <span class="local"><i></i> Runs locally</span>
+  </div></header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="headline">
+      <div><p class="eyebrow"><span class="dash"></span> Personal reference desk</p>
+      <h1 id="headline">Find the note<br>you <em>meant.</em></h1>
+      <p class="lede">Search your Markdown and text files by what’s inside them. Your notes stay in this tab.</p></div>
+      <svg class="index-art" viewBox="0 0 254 160" aria-hidden="true"><defs><pattern id="artgrid" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#bcc5b5"/></pattern></defs><rect x="5" y="6" width="241" height="144" rx="12" fill="url(#artgrid)"/><g stroke="#294b40" stroke-width="1.7" stroke-linejoin="round"><g transform="rotate(-12 100 90)"><rect x="42" y="43" width="129" height="85" rx="5" fill="#dde5cf"/></g><g transform="rotate(3 130 83)"><rect x="62" y="35" width="129" height="85" rx="5" fill="#eed7af"/></g><g transform="rotate(12 148 70)"><rect x="76" y="26" width="137" height="85" rx="5" fill="#fffaf0"/><path d="M76 49h137"/><path d="M88 37h26" stroke="#b55639" stroke-width="4"/><path d="M91 66h77m-77 10h98m-98 10h56" stroke="#839683"/></g></g><circle cx="213" cy="116" r="15" fill="#b95d3f"/><path d="M207 116h12m-6-6v12" stroke="#fff7e5" stroke-width="2"/></svg>
+    </section>
+    <div class="searchbox" role="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><label for="q" class="sr">Search the note library</label><input id="q" type="search" maxlength="240" placeholder="Search notes, e.g. vector or ranking" autocomplete="off" spellcheck="false"><kbd aria-hidden="true">/</kbd></div>
+    <div class="desk">
+      <aside aria-label="Library controls">
+        <div class="section-label">01 <span>/</span> Library</div>
+        <div id="drop" class="upload"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7V5h7l2 2h9v12H3z"/><path d="M12 16v-6m-3 3 3-3 3 3"/></svg><strong>Add your notes</strong><p>Drop .md or .txt files here, or choose them below.</p><button type="button" id="import">Choose files</button><input type="file" id="files" accept=".md,.markdown,.txt" multiple hidden></div>
+        <p id="notice" role="status" class="notice"></p>
+        <div id="examples" class="examples"><p class="tiny">Try a sample search</p><div class="chips"><button data-query="C++ vector">C++ vector</button><button data-query="ranking">ranking</button><button data-query="budget">budget</button></div></div>
+        <button class="text-btn" id="reset" hidden>Reset to sample notes</button>
+        <button class="text-btn" id="clear">Clear library</button>
+        <p class="privacy">No account, uploads or saved history. Reloading restores the samples.</p>
+      </aside>
+      <section aria-label="Notes" class="results"><div class="results-head"><div class="section-label">02 <span>/</span> <span id="mode">Sample shelf</span></div><span id="count" aria-live="polite" aria-atomic="true"></span></div><div id="list"></div></section>
+    </div>
+  </main>
+  <footer><div>Margin <span> / </span> A local-first study tool</div><div>Plain text in. Ranked notes out.</div></footer>
+  <dialog id="reader" aria-labelledby="reader-title"><div class="reader-head"><div class="section-label">Reading desk</div><button id="close" type="button" aria-label="Close note">Close <span aria-hidden="true">×</span></button></div><p id="reader-file" class="file"></p><h2 id="reader-title"></h2><pre id="reader-text"></pre></dialog>
+  <noscript>Turn on JavaScript to search. No information is sent anywhere.</noscript>
+</body></html>
